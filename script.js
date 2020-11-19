@@ -37,6 +37,12 @@ function addData(object) {
   updateDOM()
 }
 
+//
+function sortByWealth() {
+  data.sort((apples, oranges) => oranges.money - apples.money)
+  updateDOM()
+}
+
 function updateDOM(providedData = data) {
   // Clear main div
   main.innerHTML = '<h2><strong>Person</strong> Wealth</h2>'
@@ -59,3 +65,4 @@ function formatMoney(number) {
 // Add user
 addUserBtn.addEventListener('click', getRandomUser)
 doubleBtn.addEventListener('click', doubleMoney)
+sortBtn.addEventListener('click', sortByWealth)
