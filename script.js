@@ -37,9 +37,15 @@ function addData(object) {
   updateDOM()
 }
 
-//
+// Sort users by richest in descending order
 function sortByWealth() {
   data.sort((apples, oranges) => oranges.money - apples.money)
+  updateDOM()
+}
+
+// Filters out any users that have less than $1,000,000
+function showMillionaires() {
+  data = data.filter((user) => user.money > 1000000)
   updateDOM()
 }
 
@@ -62,7 +68,7 @@ function formatMoney(number) {
 }
 
 // Event Listeners
-// Add user
 addUserBtn.addEventListener('click', getRandomUser)
 doubleBtn.addEventListener('click', doubleMoney)
 sortBtn.addEventListener('click', sortByWealth)
+showMillionairesBtn.addEventListener('click', showMillionaires)
